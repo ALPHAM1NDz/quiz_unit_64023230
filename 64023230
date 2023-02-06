@@ -1,0 +1,48 @@
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class test {
+
+    @Test
+    public void testSquare() {
+        QuizOneJunit quizOneJunit = new QuizOneJunit();
+        int result = quizOneJunit.square(5);
+        assertEquals(25, result);
+    }
+
+    @Test
+    public void testCountLetterA() {
+        QuizOneJunit quizOneJunit = new QuizOneJunit();
+        int result = quizOneJunit.countLetterA("Apple");
+        assertEquals(1, result);
+
+    }
+
+    @Test 
+    public void checkTwoLetter_whenInputIsLessThanTwo_shouldReturnFalse() {
+        QuizOneJunit quizOneJunit = new QuizOneJunit();
+
+        boolean result = quizOneJunit.checkTwoLetter("A");
+
+        assertFalse(result);
+    }
+
+    @Test 
+    public void checkTwoLetter_whenInputIsTwo_shouldReturnTrue() {
+        QuizOneJunit quizOneJunit = new QuizOneJunit();
+
+        boolean result = quizOneJunit.checkTwoLetter("AB");
+
+        assertTrue(result);
+    }
+
+    
+    @Test 
+    public void checkTwoLetter_whenInputIsMoreThanTwoAndFirstAndLastLettersAreNotEqual_shouldReturnFalse() {
+        QuizOneJunit quizOneJunit = new QuizOneJunit();
+
+        boolean result = quizOneJunit.checkTwoLetter("ABCDCE");
+
+        assertFalse(result);
+    }    
+}
